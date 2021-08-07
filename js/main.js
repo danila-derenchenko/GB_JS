@@ -60,10 +60,6 @@ const app = new Vue({
   },
   beforeCreate() { },
   created() {
-    this.products;
-  },
-  beforeMount() { },
-  mounted() {
     this.getJson(`${API + this.catalogUrl}`)
       .then(data => {
         if (data) {
@@ -77,6 +73,8 @@ const app = new Vue({
         }
       });
   },
+  beforeMount() { },
+  mounted() { },
   beforeUpdate() { },
   updated() { },
   beforeDestroy() { },
