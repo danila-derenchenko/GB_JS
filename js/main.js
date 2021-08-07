@@ -58,6 +58,15 @@ const app = new Vue({
       this.Cart.push(product);
     }
   },
+  computed: {
+    getFPcart() {
+      let FullPrice = 0;
+      for (let i of this.Cart) {
+        FullPrice = FullPrice + i.price;
+      }
+      return FullPrice;
+    }
+  },
   beforeCreate() { },
   created() {
     this.getJson(`${API + this.catalogUrl}`)
